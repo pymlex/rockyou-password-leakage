@@ -2,7 +2,7 @@
 
 ## Overview
 
-We analyse password structures in a RockYou leak sample and visualizes them as a similarity graph. The analysed password list `rockyou_0.02_test.txt`—which is freely distributed as an artifact for the PassLLM paper with all ethical considerations addressed—contains 100,000 passwords, one per line. After deduplication, 82,771 unique passwords remain while preserving the order of first occurrence. Here is the length distribution of the passwords:
+We analyse password structures in a RockYou leak sample and visualizes them as a similarity graph. The analysed password list `rockyou_0.02_test.txt`—which is freely distributed as an artifact for the PassLLM [paper][1] with all ethical considerations addressed—contains 100,000 passwords, one per line. After deduplication, 82,771 unique passwords remain while preserving the order of first occurrence. Here is the length distribution of the passwords:
 
 <img width="580" height="432" alt="output_13_1" src="https://github.com/user-attachments/assets/29fb2697-b16c-478c-8e9e-3a7f44d1abe3" />
 
@@ -68,5 +68,4 @@ And bigger subsets from the main component of the graph:
 
 The RockYou leak has strong local structure. Passwords are grouped into families built from repeated roots, suffixes, dates, and small edits. MinHash and LSH are enough to find the candidate space quickly, and Levenshtein distance then makes the structure explicit. This repository turns that structure into a graph and shows how the choice of thresholds changes the graph from sparse and fragmented to dense and overconnected.
 
-[1]: https://www.usenix.org/conference/usenixsecurity25/presentation/zou-yunkai?utm_source=chatgpt.com "Password Guessing Using Large Language Models"
-[2]: https://arxiv.org/html/2604.12601v1?utm_source=chatgpt.com "LLM-Guided Prompt Evolution for Password Guessing ..."
+[1]: https://zenodo.org/records/15612295 "LLM-Guided Prompt Evolution for Password Guessing ..."
