@@ -36,10 +36,6 @@ DSU is used to track connected components while edges are added in distance orde
 
 The final graph was built at `threshold_lsh = 0.40` and `threshold_levenshtein = 3`. At that point the pipeline produced 490,544 candidate pairs, 190,003 edges, 37,138 connected components, and a largest connected component of size 39,885.
 
-<img width="800" height="500" alt="newplot (3)" src="https://github.com/user-attachments/assets/745a857b-ff95-4717-8b14-c25e8a7622cc" />
-
-The first plot shows how quickly the number of candidate pairs drops as `threshold_lsh` increases. The curve is monotone and steep, which means that the LSH stage is doing most of the pruning work. Even a small change in the threshold noticeably changes how many pairs survive to the exact distance stage. This makes `threshold_lsh` the main control knob for the computational cost of the pipeline.
-
 The 3D surfaces show the same trade-off from different angles. The edge-count surface grows as the Levenshtein threshold increases and as the LSH filter becomes less strict, which is the expected behavior for a similarity graph:
 
 <img width="800" height="500" alt="newplot (2)" src="https://github.com/user-attachments/assets/7a5d7917-dd39-4246-a501-2b0352d3ba98" />
